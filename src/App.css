@@ -224,7 +224,8 @@ body {
   border: 0.2rem solid #4d4d4d;
   cursor: pointer;
   text-transform: capitalize;
-  background-color: white;
+  background-color: rgb(255, 255, 255);
+  color:rgb(0, 0, 0);
 }
 .btn.toggle-btn {
   border-width: 1px;
@@ -240,11 +241,11 @@ body {
   border-color: #bd2130;
 }
 .btn__filter {
-  border-color: lightgrey;
+  border-color: rgb(0, 0, 0);
 }
 .btn__primary {
   color: #fff;
-  background-color: #000;
+  background-color: rgb(0, 0, 0);
 }
 .btn-group {
   display: flex;
