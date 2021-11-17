@@ -2,51 +2,30 @@ import "./styles.css";
 import {useState} from "react";
 import {React} from "react";
 //import {createElement} from "react";
+//import {ReactDOM} from 'react-dom';
 
-function InputField () {
+//const [taskList, setTasklist] = useState(null)
+
+
+
+function Tasklist (props) {
+    const [ tasks, setTasks ] = useState([]);
+    const [newTask, setNewTask] = useState(props.randomTask);
     
     
-    /*
-    const [Task, setTask] = useState(0);
-    function SaveInput () {
-        console.log({Task})
-    } */
+    const addTask = () => {
+      setTasks([...tasks, props.randomTask])
+    };
     
-    function createEntry () {
-        React.createElement('li', {id: 'li1'},'one');
-    }
 
-    return(
-    <div>
-        <button onClick={createEntry}>Click here</button>
-
-        <form>
-            <label>
-                Task: 
-             </label>
-            <input type="text" name="name" />
-            <input type="submit" value="Submit" />
-        </form>
-       
-    </div>
-    )
-}
-
-
-
-
-/*
-{textInput}
-
-<input type="text" name="name" value={setTask}></input>
-    <button onClick= {SaveInput}>Submit</button>
-    <input type="submit" value="Submit" />
-*/
-
-
-
-
-
-
-
-export default InputField;
+    return (
+      <div className="CreateEntry">
+        <h1>Todo List</h1>
+        <button onClick={addTask}>addTask</button>
+        <div>{tasks.map((task) => <div>{task}</div>)}</div>
+        <div>Your task:{props.aTask.job}</div>
+      </div>
+    );
+  }
+//<div>{tasks.map(a => <div>{a}</div>)}</div>
+export default Tasklist;
