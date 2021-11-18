@@ -4,7 +4,10 @@ import {useState} from "react"
 
 const taskTemplate = {
   content: '',
-  assignee: ''
+  assignee: '',
+  dueDate: '',
+  priority: '',
+  estTime: ''
 }
 
 function App() {
@@ -30,8 +33,27 @@ function App() {
   console.log(formData)
   return (
    <section>
-      <label>Task:<input type="text" name="content" onChange={handleChange}/></label>
-      <label>Asignee:<input type="text" name="assignee" onChange={handleChange} /></label>
+      <label>Task<input type="text" name="content" onChange={handleChange}/></label>
+      <label> Assignee
+        <select name="assignee" onChange={handleChange}>
+          <option value=""></option>
+          <option value="Kai">Kai</option>
+          <option value="Fran">Fran</option>
+          <option value="Divya">Divya</option>
+      </select>
+      </label>
+
+      <label>Due<input type="date" name="dueDate" onChange={handleChange} /></label>
+      <label> Priority
+        <select name="priority" onChange={handleChange}>
+          <option value=""></option>
+          <option value="Very High">Very High</option>
+          <option value="High">High</option>
+          <option value="Medium">Medium</option>
+          <option value="Low">Low</option>
+      </select>
+      </label>
+      <label>Estimated time (h)<input type="number" min="0" max="12" step="0.25" name="dueDate" onChange={handleChange} /></label>
       <button onClick={handleSubmit}>Add new Task</button>    
     <div>
       
