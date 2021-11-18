@@ -1,25 +1,48 @@
 import './App.css';
-import CreateEntry from "./CreateEntry"
+import Tasklist from "./TaskList"
+import {useState} from "react"
 
-
-//const newTask1 = `I like to work`;
-//<CreateEntry newTask={`bye`}/>
-//{[{firstname: `why?`}, {lastname: `but why?`}]}
-
-const myTask = {
-  job: `figure out react`,
-  toDo: `now`
-};
+const taskTemplate = {
+  content: '',
+  assignee: ''
+}
 
 function App() {
+  const [ formData, setFormData ] = useState(taskTemplate);
+  const [ tasks, setTasks ] = useState([]);
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value.trim()
+      // content: "make to do list work"
+      // assignee: "fey kai"
+      // Trimming any whitespace [e.target.name]: e.target.value.trim()
+    });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    setTasks([...tasks, formData])
+
+  };
+
+  console.log(formData)
   return (
-    
+   <section>
+      <label>Task:<input type="text" name="content" onChange={handleChange}/></label>
+      <label>Asignee:<input type="text" name="assignee" onChange={handleChange} /></label>
+      <button onClick={handleSubmit}>Add new Task</button>    
     <div>
-      <CreateEntry randomTask="do something"
-      aTask={myTask} />
+      
+      <Tasklist tasks={tasks} />
     </div>
-    
-  );
+  </section>
+  );   
 }
+/*
+<CreateEntry randomTask="do something"
+      Task={sendForm} />
+*/
 
 export default App;

@@ -8,24 +8,18 @@ import {React} from "react";
 
 
 
-function Tasklist (props) {
-    const [ tasks, setTasks ] = useState([]);
-    const [newTask, setNewTask] = useState(props.randomTask);
+function Tasklist ({ tasks }) {
     
-    
-    const addTask = () => {
-      setTasks([...tasks, props.randomTask])
-    };
-    
-
     return (
       <div className="CreateEntry">
         <h1>Todo List</h1>
-        <button onClick={addTask}>addTask</button>
-        <div>{tasks.map((task) => <div>{task}</div>)}</div>
-        <div>Your task:{props.aTask.job}</div>
+        <div>{tasks.map((a) => <div>{a.content}</div>)}</div>        
       </div>
     );
   }
+  //<div>Your task:{props.Task}</div>
 //<div>{tasks.map(a => <div>{a}</div>)}</div>
+
+
+
 export default Tasklist;
