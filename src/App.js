@@ -1,6 +1,9 @@
 import './App.css';
 import Tasklist from "./TaskList"
-import {useState} from "react"
+import {useState} from "react";
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+import { Button } from 'react-bootstrap';
 
 const taskTemplate = {
   content: '',
@@ -32,7 +35,7 @@ function App() {
    <section>
       <label>Task:<input type="text" name="content" onChange={handleChange}/></label>
       <label>Asignee:<input type="text" name="assignee" onChange={handleChange} /></label>
-      <button onClick={handleSubmit}>Add new Task</button>    
+      <Button variant="primary" onClick={handleSubmit}>Add new Task</Button>    
     <div>
       
       <Tasklist tasks={tasks} />
