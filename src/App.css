@@ -19,8 +19,9 @@ body {
   width: 80%;
   height: auto;
   background-repeat: no-repeat;
-  background-position: top center;
   background-size: cover;
+  background-position: center;
+
   }
 }
 
@@ -31,11 +32,10 @@ body {
   height: auto;
 }
 
+
 @media only screen and (max-width: 768px) {
 .container,
 h1 {
-  padding-top: 15px;
-  padding-bottom: 15px;
   padding-left: 150px;
   }
 }
