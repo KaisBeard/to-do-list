@@ -1,3 +1,8 @@
 body {
-    margin: 1px;
+  margin: 1px;
+}
+.resultAlign {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
 }
