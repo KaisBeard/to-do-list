@@ -126,22 +126,7 @@ function App() {
               Add new Task
             </Button>
 
-            {/* edit button - still need to put functionality */}
-
-            <div className="edit-task">
-              <input
-                type="text"
-                onChange={(a) => setEditingText(a.target.value)}
-                value={editingText}
-              />
-              <Button
-                onClick={() => setTaskEditing()}
-                variant="warning"
-                size="sm"
-              >
-                Edit task
-              </Button>
-            </div>
+            
 
             <div>
               <Tasklist tasks={tasks} />
