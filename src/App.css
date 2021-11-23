@@ -31,6 +31,7 @@ body {
   height: auto;
 }
 
+
 @media only screen and (max-width: 768px) {
 .container,
 h1 {
@@ -64,9 +65,8 @@ h1 {
   display: flex;
   margin-left: 200px;
   text-align: justify;
-  padding: 2px;
-
-  }
+  padding: 0;
+}
 }
 
 @media only screen and (max-width: 768px) {
@@ -95,6 +95,12 @@ label {
   font-family: 'Just Another Hand', cursive;  
   margin: 10px;
 
+}
+
+@media only screen and (max-width: 768px) {
+  section label {
+    padding: -10px;
+  }
 }
 
 .edit-task {

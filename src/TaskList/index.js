@@ -2,6 +2,8 @@ import "./styles.css";
 import {useState} from "react";
 import {React} from "react";
 import "bootstrap-icons/font/bootstrap-icons.css";
+
+
 //import {createElement} from "react";
 //import {ReactDOM} from 'react-dom';
 
@@ -9,14 +11,14 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 
 
 
-function Tasklist ({ tasks }) {
+function Editable ({ tasks }) {
     
     return (
       <div className="Tasklist">
+        
         <h1>Todo List</h1>
-        <div>{tasks.map((a) => <div>Task: {a.content} -- Assignee: {a.assignee} -- Priority: {a.priority} -- Due: {a.dueDate} -- Estimated time: {a.estTime} -- Comment: {a.comment} <hr></hr> </div>)}</div>
-            
-      </div>
+          <div>{tasks.map((a) => <div>Task: {a.content} -- Assignee: {a.assignee} -- Priority: {a.priority} -- Due: {a.dueDate} -- Estimated time: {a.estTime} -- Comment: {a.comment} </div>) }</div>
+          </div>
     );
   }
   //<div>Your task:{props.Task}</div>
@@ -24,4 +26,5 @@ function Tasklist ({ tasks }) {
 
 
 
-export default Tasklist;
+export default Editable;
+

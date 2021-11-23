@@ -1,12 +1,13 @@
 import './App.css';
+import React, { Component } from 'react';
 import Tasklist from "./TaskList"
-import {useState} from "react"
+import { useState, useRef } from "react"
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Button, Tab, Alert } from 'react-bootstrap';
 import { ToastBody } from 'react-bootstrap';
 import 'react-tabs/style/react-tabs.css';
 import { BsCheckSquareFill } from "react-icons/bs";
-import { EmailShareButton,  EmailIcon } from "react-share";
+
 
 
 const taskTemplate = {
@@ -20,9 +21,7 @@ const taskTemplate = {
 function App() {
   const [ formData, setFormData ] = useState(taskTemplate);
   const [ tasks, setTasks ] = useState([]);
-  const [taskEditing, setTaskEditing] = useState(null)
-  const [editingText, setEditingText] = useState("")
-
+  
   const handleChange = (e) => {
     setFormData({
       ...formData,
@@ -36,8 +35,8 @@ function App() {
   const handleSubmit = (e) => {
     e.preventDefault()
     setTasks([...tasks, formData])
-    
   };
+ 
 
   // BEGIN of task priority colors: 
 
@@ -90,20 +89,13 @@ function App() {
                 </label>
                 <label>Estimated time (h)<input type="number" min="0" max="12" step="0.25" name="dueDate" onChange={handleChange} /></label>
                 <label>Comment<input type="text" name="comment" placeholder="This task is about?" onChange={handleChange} /></label>
+                <Button onClick={handleSubmit} variant="success" size="sm">Add new Task</Button> 
 
-                <Button onClick={handleSubmit} variant="success" size="sm">Add new Task</Button>   
-
-                {/* edit button - still need to put functionality */}
-
-                <div className="edit-task">
-                  <input type="text" onChange={(a) => setEditingText(a.target.value)}
-                    value={editingText} />
-                  <Button onClick={() => setTaskEditing()} variant="warning" size="sm">Edit task</Button>
-                </div> 
-                
               <div>
                 
                 <Tasklist tasks={tasks} />
+                {/* <Editable /> */}
+                
               </div>
             </section>
           </div>
